@@ -1,3 +1,5 @@
+-- Metricas dos motivos de atendimento
+
 SELECT motivo, tempo_medio_atendimento, qntd, resolvidos, ROUND(resolvidos / CAST(qntd AS NUMERIC), 4) as taxa_de_resolucao, custo_total FROM (
   SELECT motivo, ROUND(AVG(tempo_atendimento), 2) AS tempo_medio_atendimento, COUNT(motivo) AS qntd,
     SUM(
